@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17304010272079BB0081C235 /* MultiPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1730400F272079BB0081C235 /* MultiPicker.swift */; };
+		179750F5271B209800750B10 /* SetLimitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179750F4271B209800750B10 /* SetLimitView.swift */; };
 		17AEF7A12714C46A009D47DF /* CountITApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AEF7A02714C46A009D47DF /* CountITApp.swift */; };
 		17AEF7A32714C46A009D47DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AEF7A22714C46A009D47DF /* ContentView.swift */; };
 		17AEF7A52714C46E009D47DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17AEF7A42714C46E009D47DF /* Assets.xcassets */; };
@@ -14,6 +16,9 @@
 		17AEF7B22714C46E009D47DF /* CountITTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AEF7B12714C46E009D47DF /* CountITTests.swift */; };
 		17AEF7BC2714C46E009D47DF /* CountITUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AEF7BB2714C46E009D47DF /* CountITUITests.swift */; };
 		17AEF7BE2714C46E009D47DF /* CountITUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AEF7BD2714C46E009D47DF /* CountITUITestsLaunchTests.swift */; };
+		17BE320728B2B81F00E391BA /* Extension+BinaryInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BE320628B2B81F00E391BA /* Extension+BinaryInteger.swift */; };
+		17F33A2128AF79DF003794C4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F33A2028AF79DF003794C4 /* Constants.swift */; };
+		17F33A2328AF7C79003794C4 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F33A2228AF7C79003794C4 /* ContentViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1730400F272079BB0081C235 /* MultiPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPicker.swift; sourceTree = "<group>"; };
+		179750F4271B209800750B10 /* SetLimitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetLimitView.swift; sourceTree = "<group>"; };
 		17AEF79D2714C46A009D47DF /* CountIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17AEF7A02714C46A009D47DF /* CountITApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountITApp.swift; sourceTree = "<group>"; };
 		17AEF7A22714C46A009D47DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +51,9 @@
 		17AEF7B72714C46E009D47DF /* CountITUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountITUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17AEF7BB2714C46E009D47DF /* CountITUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountITUITests.swift; sourceTree = "<group>"; };
 		17AEF7BD2714C46E009D47DF /* CountITUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountITUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		17BE320628B2B81F00E391BA /* Extension+BinaryInteger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+BinaryInteger.swift"; sourceTree = "<group>"; };
+		17F33A2028AF79DF003794C4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		17F33A2228AF7C79003794C4 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +105,10 @@
 			isa = PBXGroup;
 			children = (
 				17AEF7A02714C46A009D47DF /* CountITApp.swift */,
-				17AEF7A22714C46A009D47DF /* ContentView.swift */,
+				17F33A2028AF79DF003794C4 /* Constants.swift */,
+				17BE320828B2B85000E391BA /* Extensions */,
+				17BE320528B2B74400E391BA /* ViewModel */,
+				17BE320428B2B6F300E391BA /* Views */,
 				17AEF7A42714C46E009D47DF /* Assets.xcassets */,
 				17AEF7A62714C46E009D47DF /* Preview Content */,
 			);
@@ -125,6 +138,32 @@
 				17AEF7BD2714C46E009D47DF /* CountITUITestsLaunchTests.swift */,
 			);
 			path = CountITUITests;
+			sourceTree = "<group>";
+		};
+		17BE320428B2B6F300E391BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				179750F4271B209800750B10 /* SetLimitView.swift */,
+				17AEF7A22714C46A009D47DF /* ContentView.swift */,
+				1730400F272079BB0081C235 /* MultiPicker.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		17BE320528B2B74400E391BA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				17F33A2228AF7C79003794C4 /* ContentViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		17BE320828B2B85000E391BA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				17BE320628B2B81F00E391BA /* Extension+BinaryInteger.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +296,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17BE320728B2B81F00E391BA /* Extension+BinaryInteger.swift in Sources */,
+				17F33A2128AF79DF003794C4 /* Constants.swift in Sources */,
 				17AEF7A32714C46A009D47DF /* ContentView.swift in Sources */,
+				17F33A2328AF7C79003794C4 /* ContentViewModel.swift in Sources */,
+				17304010272079BB0081C235 /* MultiPicker.swift in Sources */,
 				17AEF7A12714C46A009D47DF /* CountITApp.swift in Sources */,
+				179750F5271B209800750B10 /* SetLimitView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,12 +463,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CountIT/Preview Content\"";
-				DEVELOPMENT_TEAM = 4T37769TK7;
+				DEVELOPMENT_TEAM = DRHGZRH3X9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -437,7 +482,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -449,12 +494,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CountIT/Preview Content\"";
-				DEVELOPMENT_TEAM = 4T37769TK7;
+				DEVELOPMENT_TEAM = DRHGZRH3X9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -467,7 +513,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
