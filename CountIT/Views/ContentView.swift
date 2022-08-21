@@ -7,15 +7,16 @@
 
 import SwiftUI
 
-/// Content View
+
 struct ContentView: View {
     var viewModel = ContentViewModel()
-    @State var numberShown = ContentViewModel().numberShown
+    var countITModel = CountITModel()
+    @State var numberShown = CountITModel().numberShown
     @State var alignmentType : Alignment = .trailing
     @State var showingSheet: Bool = false
-    var maxNumber = ContentViewModel().maxNumber
+    var maxNumber = CountITModel().maxNumber
     // sets initial Limit
-    @State var setLimit = ContentViewModel().setLimit
+    @State var setLimit = CountITModel().setLimit
     @State var selection = ["0","0","0"]
  
     // Main body
@@ -87,7 +88,7 @@ struct ContentView: View {
                 //MARK: Bottom buttons
                 VStack(spacing: 50) {
                     Button(action: {
-                        numberShown = viewModel.increaseCount(maxNumber: maxNumber, numberShown: numberShown)
+                        numberShown = countITModel.increaseCount(maxNumber: maxNumber, numberShown: numberShown)
                     }) {
                         
                         // Plus and Minus buttons
@@ -101,7 +102,7 @@ struct ContentView: View {
                             .padding()
                     }
                     Button(action: {
-                        numberShown = viewModel.decreaseCount(numberShown: numberShown)
+                        numberShown = countITModel.decreaseCount(numberShown: numberShown)
                     }) {
                         Image(systemName:
                                 Constants.Icons.minusCircle.rawValue)

@@ -11,7 +11,7 @@ import SwiftUI
 struct CountITApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(setLimit:  ContentViewModel().setLimit)
+            ContentView(setLimit:  CountITModel().setLimit)
         }
     }
 }
