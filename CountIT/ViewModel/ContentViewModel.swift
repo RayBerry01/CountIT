@@ -8,11 +8,22 @@
 import Foundation
 import SwiftUI
 
-struct ContentViewModel {
-    
+/// ContentViewAppreance
+protocol ContentViewAppearance {
+    func determineBackgroundColor(numberShown:Int, setLimit: Int) -> Color
+}
 
+struct ContentViewModel: ContentViewAppearance {
     
-    /// Determine backgreound colour depending upon the limit and the number shown
+    func imageFontColor() -> Color {
+        return .white
+    }
+    
+    func imageFontSize() -> Font {
+     return .system(size: 80.0)
+    }
+    
+    /// Determine background colour depending upon the limit and the number shown
     /// - Parameters:
     ///   - numberShown: number shown
     ///   - setLimit: set limit
@@ -24,6 +35,4 @@ struct ContentViewModel {
             return Color.green
         }
     }
-    
-    
 }

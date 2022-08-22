@@ -12,18 +12,17 @@ struct ContentView: View {
     var viewModel = ContentViewModel()
     var countITModel = CountITModel()
     @State var numberShown = CountITModel().numberShown
-    @State var alignmentType : Alignment = .trailing
-    @State var showingSheet: Bool = false
     var maxNumber = CountITModel().maxNumber
     // sets initial Limit
     @State var setLimit = CountITModel().setLimit
+    @State var alignmentType : Alignment = .trailing
+    @State var showingSheet: Bool = false
     @State var selection = ["0","0","0"]
  
     // Main body
     var body: some View {
         
         ZStack {
-            
             viewModel.determineBackgroundColor(numberShown: numberShown, setLimit: setLimit).ignoresSafeArea()
             
             VStack() {
@@ -38,12 +37,9 @@ struct ContentView: View {
                     {
                         
                         Image(systemName: Constants.Icons.doubleArrow.rawValue)
-                            .foregroundColor(.white)
-                            .font(.system(size: 80.0)
-                                  
-                            )
+                            .foregroundColor(viewModel.imageFontColor())
+                            .font(viewModel.imageFontSize())
                             .frame(width: 130, height: 50, alignment: .leading)
-                        
                     }
                     //Button 2
                     
@@ -54,18 +50,14 @@ struct ContentView: View {
                     {
                         
                         Image(systemName: Constants.Icons.upArrow.rawValue)
-                            .foregroundColor(.white)
-                            .font(.system(size: 80.0)
-                                  
-                            )
+                            .foregroundColor(viewModel.imageFontColor())
+                            .font(viewModel.imageFontSize())
                             .frame(width: 165, height: 50, alignment: .trailing)
                             .sheet(isPresented: $showingSheet) {
                                 
                                 SetLimitView(setLimit: $setLimit,selection: selection)
-                                
                             }
                     }
-                    
                 }
                 .padding()
                 Spacer()
@@ -93,10 +85,8 @@ struct ContentView: View {
                         
                         // Plus and Minus buttons
                         Image(systemName: Constants.Icons.plusCircle.rawValue)
-                            .foregroundColor(.white)
-                            .font(.system(size: 80.0)
-                                  
-                            )
+                            .foregroundColor(viewModel.imageFontColor())
+                            .font(viewModel.imageFontSize())
                             .frame(width: 300, height: 50, alignment: alignmentType)
                         
                             .padding()
@@ -106,8 +96,8 @@ struct ContentView: View {
                     }) {
                         Image(systemName:
                                 Constants.Icons.minusCircle.rawValue)
-                            .foregroundColor(.white)
-                            .font(.system(size: 80.0))
+                            .foregroundColor(viewModel.imageFontColor())
+                            .font(viewModel.imageFontSize())
                             .frame(width: 300, height: 50, alignment: alignmentType)
                     }
                 }

@@ -70,7 +70,7 @@ struct SetLimitView: View {
 
 
 struct SetLimitView_Previews: PreviewProvider {
-    @State static var setLimit = 999
+    @State static var setLimit = CountITModel().maxNumber
     static var previews: some View {
         SetLimitView(setLimit: $setLimit)
         
