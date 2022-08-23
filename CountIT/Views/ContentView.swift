@@ -9,7 +9,9 @@ import SwiftUI
 
 
 struct ContentView: View {
-    var viewModel = ContentViewModel()
+    
+    @ObservedObject private(set) var viewModel:ContentViewModel
+   
     var countITModel = CountITModel()
     @State var numberShown = CountITModel().numberShown
     var maxNumber = CountITModel().maxNumber
@@ -18,7 +20,7 @@ struct ContentView: View {
     @State var alignmentType : Alignment = .trailing
     @State var showingSheet: Bool = false
     @State var selection = ["0","0","0"]
- 
+    
     // Main body
     var body: some View {
         
@@ -35,10 +37,8 @@ struct ContentView: View {
                         alignmentType =  alignmentType ==  .trailing  ? .leading : .trailing
                     })
                     {
-                        
-                        Image(systemName: Constants.Icons.doubleArrow.rawValue)
-                            .foregroundColor(viewModel.imageFontColor())
-                            .font(viewModel.imageFontSize())
+                       
+                        ImageIcon(viewModel: viewModel, imageName:  Constants.Icons.doubleArrow.rawValue)
                             .frame(width: 130, height: 50, alignment: .leading)
                     }
                     //Button 2
@@ -48,10 +48,7 @@ struct ContentView: View {
                         print(setLimit.digits)
                     })
                     {
-                        
-                        Image(systemName: Constants.Icons.upArrow.rawValue)
-                            .foregroundColor(viewModel.imageFontColor())
-                            .font(viewModel.imageFontSize())
+                        ImageIcon(viewModel: viewModel, imageName:  Constants.Icons.upArrow.rawValue)
                             .frame(width: 165, height: 50, alignment: .trailing)
                             .sheet(isPresented: $showingSheet) {
                                 
@@ -67,9 +64,7 @@ struct ContentView: View {
                 VStack(spacing: -20) {
                     
                     Text("                      \(setLimit)")
-                    
                         .font(.system(size: 20.0)
-                              
                         )
                     
                     Text("\(numberShown)")
@@ -84,20 +79,15 @@ struct ContentView: View {
                     }) {
                         
                         // Plus and Minus buttons
-                        Image(systemName: Constants.Icons.plusCircle.rawValue)
-                            .foregroundColor(viewModel.imageFontColor())
-                            .font(viewModel.imageFontSize())
+                        ImageIcon(viewModel: viewModel, imageName:  Constants.Icons.plusCircle.rawValue)
                             .frame(width: 300, height: 50, alignment: alignmentType)
-                        
                             .padding()
                     }
                     Button(action: {
                         numberShown = countITModel.decreaseCount(numberShown: numberShown)
                     }) {
-                        Image(systemName:
-                                Constants.Icons.minusCircle.rawValue)
-                            .foregroundColor(viewModel.imageFontColor())
-                            .font(viewModel.imageFontSize())
+
+                        ImageIcon(viewModel: viewModel, imageName: Constants.Icons.minusCircle.rawValue)
                             .frame(width: 300, height: 50, alignment: alignmentType)
                     }
                 }
@@ -106,8 +96,22 @@ struct ContentView: View {
     }
 }
 
+struct ImageIcon: View {
+    @ObservedObject private(set) var viewModel:ContentViewModel
+  
+    @State var alignmentType : Alignment = .trailing
+    @State var imageName: String
+    var body: some View {
+        VStack{
+            Image(systemName: imageName)
+            .foregroundColor(viewModel.imageFontColor())
+            .font(viewModel.imageFontSize())
+        }
+    }
+}
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(setLimit: 0)
+        ContentView(viewModel: ContentViewModel(), setLimit: 0)
     }
 }

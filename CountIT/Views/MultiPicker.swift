@@ -17,7 +17,8 @@ struct MultiPicker: View  {
     
     var body: some View {
         
-        
+        VStack {
+
         GeometryReader { geometry in
             HStack () {
                 ForEach(0..<self.data.count) { column in
@@ -27,21 +28,18 @@ struct MultiPicker: View  {
                                 .tag(self.data[column].1[row])
                                 .foregroundColor(.black)
                                 .font(Font.headline.weight(.bold))
-                        }
+                        }.clipped()
+                        //.frame(width: 10, height: 20)
                         
                     }
                    
                     
                     .pickerStyle(WheelPickerStyle())
-                    .fixedSize(horizontal: true, vertical: true)
                     .frame(width: geometry.size.width / CGFloat(self.data.count), height: geometry.size.height)
-                    .compositingGroup()
-                    .clipped(antialiased: true)
-                  
-                   
+                  //  .clipped()
                 }
             }
-            .frame(height: 160)
+        }
         }
     }
 }

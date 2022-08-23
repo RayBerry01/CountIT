@@ -13,7 +13,7 @@ protocol ContentViewAppearance {
     func determineBackgroundColor(numberShown:Int, setLimit: Int) -> Color
 }
 
-struct ContentViewModel: ContentViewAppearance {
+class ContentViewModel: ContentViewAppearance, ObservableObject {
     
     func imageFontColor() -> Color {
         return .white
@@ -22,6 +22,11 @@ struct ContentViewModel: ContentViewAppearance {
     func imageFontSize() -> Font {
      return .system(size: 80.0)
     }
+    
+    func imageName() -> String{
+        return "Hello"
+    }
+    
     
     /// Determine background colour depending upon the limit and the number shown
     /// - Parameters:
