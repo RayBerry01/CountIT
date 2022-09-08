@@ -18,28 +18,30 @@ struct MultiPicker: View  {
     var body: some View {
         
         VStack {
-
-        GeometryReader { geometry in
-            HStack () {
-                ForEach(0..<self.data.count) { column in
-                    Picker(self.data[column].0, selection: self.$selection[column]) {
-                        ForEach(0..<self.data[column].1.count) { row in
-                            Text(verbatim: self.data[column].1[row])
-                                .tag(self.data[column].1[row])
-                                .foregroundColor(.black)
-                                .font(Font.headline.weight(.bold))
-                        }.clipped()
-                        //.frame(width: 10, height: 20)
+            
+            GeometryReader { geometry in
+                HStack () {
+                    ForEach(0..<self.data.count) { column in
+                        Picker(self.data[column].0, selection: self.$selection[column]) {
+                            ForEach(0..<self.data[column].1.count) { row in
+                                Text(verbatim: self.data[column].1[row])
+                                    .tag(self.data[column].1[row])
+                                    .foregroundColor(.black)
+                                    .font(Font.headline.weight(.bold))
+                                
+                            }
+                        }
+                        
+                        .pickerStyle(.wheel)
+                        .frame(width: geometry.size.width / CGFloat(self.data.count), height: geometry.size.height)
+                        .compositingGroup()
+                        .clipped()
+                         .padding(.trailing)
                         
                     }
-                   
-                    
-                    .pickerStyle(WheelPickerStyle())
-                    .frame(width: geometry.size.width / CGFloat(self.data.count), height: geometry.size.height)
-                  //  .clipped()
                 }
+                
             }
-        }
         }
     }
 }

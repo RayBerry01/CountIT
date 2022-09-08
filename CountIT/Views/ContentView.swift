@@ -6,14 +6,12 @@
 //
 
 import SwiftUI
-
-
 struct ContentView: View {
     
     @ObservedObject private(set) var viewModel:ContentViewModel
    
     var countITModel = CountITModel()
-    @State var numberShown = CountITModel().numberShown
+    @State var numberShown = CountITModel().numberShown 
     var maxNumber = CountITModel().maxNumber
     // sets initial Limit
     @State var setLimit = CountITModel().setLimit
@@ -28,40 +26,37 @@ struct ContentView: View {
             viewModel.determineBackgroundColor(numberShown: numberShown, setLimit: setLimit).ignoresSafeArea()
             
             VStack() {
+                ScrollView {
                 Spacer()
                 // MARK: Top Level Buttons
-                //Button 1
-                
                 HStack() {
                     Button (action: {
                         alignmentType =  alignmentType ==  .trailing  ? .leading : .trailing
                     })
                     {
                        
-                        ImageIcon(viewModel: viewModel, imageName:  Constants.Icons.doubleArrow.rawValue)
-                            .frame(width: 130, height: 50, alignment: .leading)
+                        ImageIcon(viewModel: viewModel, imageName:  Constants.Icons.doubleArrow.rawValue, accessibilityText: Constants.AccessibilityText.switchSides.rawValue )
+                            .frame(maxWidth: .infinity, alignment: .leading)
                     }
-                    //Button 2
+                 
                     
                     Button (action: {
                         self.showingSheet.toggle()
                         print(setLimit.digits)
                     })
                     {
-                        ImageIcon(viewModel: viewModel, imageName:  Constants.Icons.upArrow.rawValue)
-                            .frame(width: 165, height: 50, alignment: .trailing)
+                        ImageIcon(viewModel: viewModel, imageName:  Constants.Icons.upArrow.rawValue, accessibilityText: Constants.AccessibilityText.setLimit.rawValue )
+                            .frame(maxWidth: .infinity, alignment: .trailing)
                             .sheet(isPresented: $showingSheet) {
-                                
                                 SetLimitView(setLimit: $setLimit,selection: selection)
                             }
                     }
                 }
-                .padding()
-                Spacer()
+                Spacer(minLength:50)
                 
                 //MARK: Main Text
                 
-                VStack(spacing: -20) {
+                VStack() {
                     
                     Text("                      \(setLimit)")
                         .font(.system(size: 20.0)
@@ -73,41 +68,32 @@ struct ContentView: View {
                 }
                 
                 //MARK: Bottom buttons
-                VStack(spacing: 50) {
+                Spacer(minLength:5)
+                    VStack() {
                     Button(action: {
                         numberShown = countITModel.increaseCount(maxNumber: maxNumber, numberShown: numberShown)
                     }) {
                         
                         // Plus and Minus buttons
-                        ImageIcon(viewModel: viewModel, imageName:  Constants.Icons.plusCircle.rawValue)
-                            .frame(width: 300, height: 50, alignment: alignmentType)
-                            .padding()
+                        ImageIcon(viewModel: viewModel, imageName:  Constants.Icons.plusCircle.rawValue, accessibilityText: Constants.AccessibilityText.incrementCount.rawValue)
+                            .frame(maxWidth: .infinity, alignment: alignmentType)
+                          
                     }
+                    Spacer(minLength: 50)
                     Button(action: {
                         numberShown = countITModel.decreaseCount(numberShown: numberShown)
                     }) {
 
-                        ImageIcon(viewModel: viewModel, imageName: Constants.Icons.minusCircle.rawValue)
-                            .frame(width: 300, height: 50, alignment: alignmentType)
+                        ImageIcon(viewModel: viewModel, imageName: Constants.Icons.minusCircle.rawValue, accessibilityText: Constants.AccessibilityText.reduceCount.rawValue)
+                            .frame(maxWidth: .infinity, alignment: alignmentType)
+                           
                     }
                 }
             }
         }
+            .padding()
     }
 }
-
-struct ImageIcon: View {
-    @ObservedObject private(set) var viewModel:ContentViewModel
-  
-    @State var alignmentType : Alignment = .trailing
-    @State var imageName: String
-    var body: some View {
-        VStack{
-            Image(systemName: imageName)
-            .foregroundColor(viewModel.imageFontColor())
-            .font(viewModel.imageFontSize())
-        }
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {

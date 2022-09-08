@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		17304010272079BB0081C235 /* MultiPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1730400F272079BB0081C235 /* MultiPicker.swift */; };
 		179750F5271B209800750B10 /* SetLimitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179750F4271B209800750B10 /* SetLimitView.swift */; };
+		17A3764E28B53AF100C5B96E /* ImageIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A3764D28B53AF100C5B96E /* ImageIcon.swift */; };
 		17AEF7A12714C46A009D47DF /* CountITApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AEF7A02714C46A009D47DF /* CountITApp.swift */; };
 		17AEF7A32714C46A009D47DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AEF7A22714C46A009D47DF /* ContentView.swift */; };
 		17AEF7A52714C46E009D47DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17AEF7A42714C46E009D47DF /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		1730400F272079BB0081C235 /* MultiPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPicker.swift; sourceTree = "<group>"; };
 		179750F4271B209800750B10 /* SetLimitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetLimitView.swift; sourceTree = "<group>"; };
+		17A3764D28B53AF100C5B96E /* ImageIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageIcon.swift; sourceTree = "<group>"; };
 		17AEF79D2714C46A009D47DF /* CountIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17AEF7A02714C46A009D47DF /* CountITApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountITApp.swift; sourceTree = "<group>"; };
 		17AEF7A22714C46A009D47DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			children = (
 				179750F4271B209800750B10 /* SetLimitView.swift */,
 				17AEF7A22714C46A009D47DF /* ContentView.swift */,
+				17A3764D28B53AF100C5B96E /* ImageIcon.swift */,
 				1730400F272079BB0081C235 /* MultiPicker.swift */,
 			);
 			path = Views;
@@ -311,6 +314,7 @@
 				17F33A2128AF79DF003794C4 /* Constants.swift in Sources */,
 				17AEF7A32714C46A009D47DF /* ContentView.swift in Sources */,
 				17F33A2328AF7C79003794C4 /* ContentViewModel.swift in Sources */,
+				17A3764E28B53AF100C5B96E /* ImageIcon.swift in Sources */,
 				17BE320A28B2BC0D00E391BA /* CountITModel.swift in Sources */,
 				17304010272079BB0081C235 /* MultiPicker.swift in Sources */,
 				17AEF7A12714C46A009D47DF /* CountITApp.swift in Sources */,

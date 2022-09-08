@@ -28,8 +28,9 @@ struct SetLimitView: View {
             Color.green
                 .ignoresSafeArea()
             
-            VStack(spacing: 200) {
-                
+            VStack() {
+                ScrollView {
+                Spacer()
                 Button (action: {
                     
                     presentationMode.wrappedValue.dismiss()
@@ -41,12 +42,14 @@ struct SetLimitView: View {
                         .font(.system(size: 80.0)
                               
                         )
-                        .frame(width: 350, height: 50, alignment: .trailing)
+                        .frame(maxWidth: .infinity, minHeight: 150, alignment: .trailing)
                     
                     
                 }
                 
+               
                 MultiPicker(data: data, selection: $selection).frame(height: 150)
+                
                 HStack(){
                     Button {
                         
@@ -59,10 +62,13 @@ struct SetLimitView: View {
                         Text(Constants.LocalText.setLimit.rawValue)
                             .font( .largeTitle)
                             .foregroundColor(.white)
-                    }
+                    } .frame(maxWidth: .infinity, minHeight: 300, alignment: .center)
                     
                 }
             }
+              
+        }
+            .padding()
         }
     }
 }

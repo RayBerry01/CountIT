@@ -20,4 +20,14 @@ struct Constants {
     enum LocalText: String {
         case setLimit = "Set Limit"
     }
+
+    enum AccessibilityText: String {
+       case switchSides =  "Switch sides for count buttons"
+       case setLimit = "Set limit for count"
+       case incrementCount = "Increment count"
+       case reduceCount = "Reduce count"
+    }
 }
+
+
+

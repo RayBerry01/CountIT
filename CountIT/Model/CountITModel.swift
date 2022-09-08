@@ -17,12 +17,9 @@ struct CountITModel {
     /// - Parameter numberShown: number shown on screen
     /// - Returns: number - 1
     func decreaseCount(numberShown: Int) -> Int {
-        var numberShown = numberShown - 1
-        
-        if numberShown < 0 {
-            numberShown = 0
-        }
-        return numberShown
+        let numberShown = numberShown - 1
+
+        return numberShown < 0 ? 0 : numberShown
     }
     
     /// Increase count
@@ -31,12 +28,7 @@ struct CountITModel {
     ///   - numberShown: number shown on screen
     /// - Returns: number shown + 1
     func increaseCount(maxNumber: Int, numberShown: Int) -> Int{
-        var numberShown = numberShown +  1
-        
-        if numberShown > maxNumber {
-            numberShown = maxNumber
-        }
-        return numberShown
+        let numberShown = numberShown +  1
+        return numberShown > maxNumber ? maxNumber : numberShown
     }
-    
 }
