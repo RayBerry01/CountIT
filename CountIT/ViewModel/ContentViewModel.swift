@@ -23,10 +23,6 @@ class ContentViewModel: ContentViewAppearance, ObservableObject {
      return .system(size: 80.0)
     }
     
-    func imageName() -> String{
-        return "Hello"
-    }
-    
     
     /// Determine background colour depending upon the limit and the number shown
     /// - Parameters:

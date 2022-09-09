@@ -6,28 +6,59 @@
 //
 
 import XCTest
+import SwiftUI
+
 @testable import CountIT
 
 class CountITTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testDecreaseCount(){
+    let sut = CountITModel()
+    let result = sut.decreaseCount(numberShown: 5)
+    let expected = 4
+    
+    XCTAssertEqual(expected, result)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testDecreaseCountAtZero(){
+    let sut = CountITModel()
+        let result = sut.decreaseCount(numberShown: 0)
+        let expected = 0
+        
+        XCTAssertEqual(expected, result)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testIncreaseCount(){
+        let sut = CountITModel()
+        let result = sut.increaseCount(maxNumber: 10, numberShown: 5)
+        let expected = 6
+        
+        XCTAssertEqual(expected,result)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testIncreaseCountMaxReceived() {
+        let sut = CountITModel()
+        let result = sut.increaseCount(maxNumber: 5, numberShown: 5)
+        let expected = 5
+        
+        XCTAssertEqual(expected,result)
+        
     }
-
+    
+    func testBackgroundColorGreen() {
+        let sut = ContentViewModel()
+        let result = sut.determineBackgroundColor(numberShown: 5, setLimit: 30)
+        let expected = Color.green
+        
+        XCTAssertEqual(expected, result)
+    }
+    
+    func testBackgroundColorRed() {
+        let sut = ContentViewModel()
+        let result = sut.determineBackgroundColor(numberShown: 5, setLimit: 3)
+        let expected = Color.red
+        
+        XCTAssertEqual(expected, result)
+    }
+    
 }
