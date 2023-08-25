@@ -8,19 +8,24 @@
 import Foundation
 import SwiftUI
 
-/// ContentViewAppreance
+/// Content View Appreance
 protocol ContentViewAppearance {
     func determineBackgroundColor(numberShown:Int, setLimit: Int) -> Color
 }
 
 class ContentViewModel: ContentViewAppearance, ObservableObject {
     
+    
+    /// Default font color
+    /// - Returns: default font color
     func imageFontColor() -> Color {
         return .white
     }
     
+    /// Default item font size
+    /// - Returns: returns default font size
     func imageFontSize() -> Font {
-     return .system(size: 80.0)
+        return .system(size: 80.0)
     }
     
     
@@ -30,10 +35,6 @@ class ContentViewModel: ContentViewAppearance, ObservableObject {
     ///   - setLimit: set limit
     /// - Returns: the required colour
     func  determineBackgroundColor(numberShown:Int, setLimit: Int) -> Color {
-        if numberShown > setLimit {
-            return Color.red
-        } else {
-            return Color.green
-        }
+        return numberShown > setLimit ? Color.red : Color.green
     }
 }

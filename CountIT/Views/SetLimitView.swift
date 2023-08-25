@@ -57,7 +57,7 @@ struct SetLimitView: View {
                         setLimit = Int(reducedArray) ?? 0
                         presentationMode.wrappedValue.dismiss()
                     }label: {
-                        Image(systemName: Constants.Icons.paperPlane.rawValue)                        .foregroundColor(.white)
+                        Image(systemName: Constants.Icons.upArrow.rawValue)                        .foregroundColor(.white)
                             .font(.system(size: 40.0))
                         Text(Constants.LocalText.setLimit.rawValue)
                             .font( .largeTitle)

@@ -18,7 +18,6 @@ struct CountITModel {
     /// - Returns: number - 1
     func decreaseCount(numberShown: Int) -> Int {
         let numberShown = numberShown - 1
-
         return numberShown < 0 ? 0 : numberShown
     }
     

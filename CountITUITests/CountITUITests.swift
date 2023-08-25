@@ -42,6 +42,7 @@ class CountITUITests: XCTestCase {
     func testSetLimit(){
         let app = XCUIApplication()
         app.buttons[("Set limit for count")].tap()
+        
     }
     
     /// This measures how long it takes to launch your application.

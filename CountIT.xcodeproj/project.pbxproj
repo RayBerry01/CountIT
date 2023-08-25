@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		172D2AC928CF159E00880DAE /* Extension+UIPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172D2AC828CF159E00880DAE /* Extension+UIPickerView.swift */; };
 		17304010272079BB0081C235 /* MultiPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1730400F272079BB0081C235 /* MultiPicker.swift */; };
 		179750F5271B209800750B10 /* SetLimitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179750F4271B209800750B10 /* SetLimitView.swift */; };
 		17A3764E28B53AF100C5B96E /* ImageIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A3764D28B53AF100C5B96E /* ImageIcon.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		172D2AC828CF159E00880DAE /* Extension+UIPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIPickerView.swift"; sourceTree = "<group>"; };
 		1730400F272079BB0081C235 /* MultiPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPicker.swift; sourceTree = "<group>"; };
 		179750F4271B209800750B10 /* SetLimitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetLimitView.swift; sourceTree = "<group>"; };
 		17A3764D28B53AF100C5B96E /* ImageIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageIcon.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				17BE320628B2B81F00E391BA /* Extension+BinaryInteger.swift */,
+				172D2AC828CF159E00880DAE /* Extension+UIPickerView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				172D2AC928CF159E00880DAE /* Extension+UIPickerView.swift in Sources */,
 				17BE320728B2B81F00E391BA /* Extension+BinaryInteger.swift in Sources */,
 				17F33A2128AF79DF003794C4 /* Constants.swift in Sources */,
 				17AEF7A32714C46A009D47DF /* ContentView.swift in Sources */,
@@ -477,11 +481,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"CountIT/Preview Content\"";
 				DEVELOPMENT_TEAM = 4T37769TK7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = CountedIT;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -493,9 +498,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.JARBerry.CountIT;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JARBerry.CountedIT;
+				PRODUCT_NAME = CountIT;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -508,11 +516,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"CountIT/Preview Content\"";
 				DEVELOPMENT_TEAM = 4T37769TK7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = CountedIT;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -524,9 +533,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.JARBerry.CountIT;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JARBerry.CountedIT;
+				PRODUCT_NAME = CountIT;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

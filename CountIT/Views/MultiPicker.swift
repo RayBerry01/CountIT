@@ -21,9 +21,9 @@ struct MultiPicker: View  {
             
             GeometryReader { geometry in
                 HStack () {
-                    ForEach(0..<self.data.count) { column in
+                    ForEach(0..<self.data.count, id: \.self) { column in
                         Picker(self.data[column].0, selection: self.$selection[column]) {
-                            ForEach(0..<self.data[column].1.count) { row in
+                            ForEach(0..<self.data[column].1.count, id: \.self) { row in
                                 Text(verbatim: self.data[column].1[row])
                                     .tag(self.data[column].1[row])
                                     .foregroundColor(.black)
@@ -34,9 +34,9 @@ struct MultiPicker: View  {
                         
                         .pickerStyle(.wheel)
                         .frame(width: geometry.size.width / CGFloat(self.data.count), height: geometry.size.height)
-                        .compositingGroup()
-                        .clipped()
-                         .padding(.trailing)
+                      //  .compositingGroup()
+                       // .clipped()
+                       
                         
                     }
                 }
@@ -45,3 +45,5 @@ struct MultiPicker: View  {
         }
     }
 }
+
+

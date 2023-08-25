@@ -14,7 +14,6 @@ struct Constants {
         case plusCircle = "plus.circle.fill"
         case minusCircle = "minus.circle.fill"
         case xMarkCircle = "xmark.circle"
-        case paperPlane = "paperplane"
     }
     
     enum LocalText: String {
